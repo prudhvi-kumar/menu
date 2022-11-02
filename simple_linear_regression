@@ -1,0 +1,22 @@
+import pandas as pd
+x = pd.read_csv('data.csv')
+print(x)
+import numpy
+b = numpy.array(x)
+type(b)
+b.shape
+b = b.reshape(-1, 1)
+y = x["marks secured"]
+print(b)
+a = x["hrs of study"]
+type(x)
+type(y)
+y.shape
+x.shape
+from sklearn.linear_model import LinearRegression
+mind = LinearRegression()
+mind.fit(b , y)
+mind.predict([[6]])
+mind.coef_
+import joblib
+joblib.dump(mind , "marks secured.pk1")
